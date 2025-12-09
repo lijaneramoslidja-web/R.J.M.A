@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>R.J.M.A - Formações</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template principal CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* === NAVBAR (igual da index) === */
+    #header {
+      background: #ffffff !important;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+
+    #header.scrolled {
+      padding: 10px 0;
+    }
+
+    #header .container-fluid {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    #header a img {
+      height: 80px;
+      transition: all 0.3s ease;
+    }
+
+    #header.scrolled a img {
+      height: 60px;
+    }
+
+    #navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    #navbar li {
+      position: relative;
+      margin-left: 30px;
+    }
+
+    #navbar a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #8B5CF6;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    #navbar a i {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    #navbar a:hover,
+    #navbar .active,
+    #navbar li:hover > a {
+      color: #000000;
+    }
+
+    .mobile-nav-toggle {
+      color: #8B5CF6;
+      font-size: 32px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.3s;
+      position: relative;
+      z-index: 9999;
+    }
+
+    @media (max-width: 991px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      #navbar ul {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        padding: 30px 20px;
+        z-index: 999;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #navbar ul.mobile-nav-active {
+        display: flex !important;
+      }
+
+      #navbar li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      #navbar li:last-child {
+        border-bottom: none;
+      }
+
+      #navbar a {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 15px 10px;
+        font-size: 16px;
+      }
+
+      #header a img {
+        height: 60px;
+      }
+
+      #header.scrolled a img {
+        height: 50px;
+      }
+    }
+
+    /* === HEADER da página de formações === */
+    #page-header {
+      padding-top: 130px;
+      padding-bottom: 60px;
+      background: #f7f7f7;
+      text-align: center;
+    }
+
+    #page-header h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    #page-header h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    .btn-back-home {
+      border-radius: 999px;
+      padding: 12px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* === CARDS DAS FORMAÇÕES === */
+    .courses-section {
+      padding: 60px 0 80px 0;
+    }
+
+    .course-card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.25);
+    }
+
+    .course-card img {
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .course-meta {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .course-meta i {
+      margin-right: 5px;
+    }
+
+    .course-card .card-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .course-card .card-text {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .course-actions .btn {
+      font-size: 13px;
+    }
+
+    @media (max-width: 767px) {
+      #page-header h1 {
+        font-size: 26px;
+      }
+
+      #page-header h2 {
+        font-size: 16px;
+      }
+    }
+    .btn-outline-primary {
+  color: #8161D8 !important;
+  border-color: #8161D8 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #8161D8 !important;
+  color: #fff !important;
+}
+
+.btn-primary {
+  background-color: #8161D8 !important;
+  border-color: #8161D8 !important;
+}
+
+.btn-primary:hover {
+  background-color: #6c4bc4 !important;
+  border-color: #6c4bc4 !important;
+}
+
+/* ===== MODAIS PROFISSIONAIS RJMA ===== */
+.modal-content {
+  border-radius: 14px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+  background: #f8f6ff;
+  border-bottom: 2px solid #8161D8;
+  padding: 20px 25px;
+}
+
+.modal-header h5 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4a3c84;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.modal-body ul {
+  padding-left: 20px;
+}
+
+.modal-body ul li {
+  margin-bottom: 6px;
+}
+
+.modal-footer {
+  padding: 18px 25px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+/* Botões */
+.modal-footer .btn-primary {
+  background-color: #8161D8 !important;
+  border-color: #8161D8 !important;
+  font-weight: 600;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #6c4bc4 !important;
+}
+
+.modal-footer .btn-secondary {
+  background: #ddd;
+  border: none;
+  color: #444;
+  font-weight: 600;
+}
+
+.modal-footer .btn-secondary:hover {
+  background: #ccc;
+}
+
+.btn-close {
+  filter: brightness(0.4);
+}
+
+.btn-close:hover {
+  filter: brightness(0.2);
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header / Navbar (igual da index, com links ajustados) ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-xl-20 d-flex align-items-center justify-content-between">
+          <a href="index.html">
+            <img src="assets/img/logo.png" alt="logo_rjma">
+          </a>
+          <nav id="navbar" class="navbar">
+            <i class="bi bi-list mobile-nav-toggle"></i>
+            <ul id="navbar-menu">
+              <li><a class="nav-link" href="index.html#hero"><i class="bi bi-house-door"></i>Início</a></li>
+              <li><a class="nav-link" href="index.html#about"><i class="bi bi-info-circle"></i>Sobre nós</a></li>
+              <li><a class="nav-link" href="blog.html"><i class="bi bi-newspaper"></i>Notícias</a></li>
+              <li><a class="nav-link active" href="formações.html"><i class="bi bi-book"></i>Formações</a></li>
+              <li><a class="nav-link" href="contacto.html"><i class="bi bi-telephone"></i>Contacto</a></li>
+              <li><a class="nav-link" href="Nossos Serviços.html"><i class="bi bi-gear"></i>Nossos serviços</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Cabeçalho da Página ======= -->
+    <section id="page-header">
+      <div class="container">
+     
+        <h1 class="animate__animated animate__fadeInDown">
+          FORMAÇÕES PROFISSIONAIS E PLANOS CURRICULARES
+        </h1>
+        <h2 class="animate__animated animate__fadeInUp">
+          Confira os nossos cursos
+        </h2>
+      </div>
+    </section>
+
+    <!-- ======= Seção de Formações (Cards) ======= -->
+    <section id="courses" class="courses-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-4">
+
+          <!-- Curso 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/blog-7.jpg" class="card-img-top" alt="Gestão Integrada de RH e Legislação Laboral">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Gestão Integrada de RH e Legislação Laboral</h5>
+       
+                <p class="card-text mb-3">
+                  Formação focada em rotinas trabalhistas, legislação laboral e práticas modernas de gestão de pessoas.
+                </p>
+                <div class="mt-auto d-flex flex-wrap gap-2 course-actions">
+                  <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalGRH">
+                    Saber mais
+                  </button>
+                  <a href="Plano Curricular do Curso de GRH.pdf" target="_blank" class="btn btn-primary">
+                    Plano curricular (PDF)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<div class="col-lg-4 col-md-6">
+  <div class="card course-card">
+    <img src="assets/img/blog/blog-6.jpg" class="card-img-top" alt="Gestão e resolução de conflitos">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">Gestão e Resolução de Conflitos</h5>
+
+      <p class="card-text mb-3">
+        Capacita profissionais para identificar, analisar e mediar conflitos em ambientes organizacionais.
+      </p>
+
+      <div class="mt-auto d-flex flex-wrap gap-2 course-actions">
+        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalConflitos">
+          Saber mais
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+     <div class="col-lg-4 col-md-6">
+  <div class="card course-card">
+    <img src="assets/img/blog/ld.jfif" class="card-img-top" alt="Chefia e liderança">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">Chefia e Liderança</h5>
+
+      <p class="card-text mb-3">
+        Desenvolve competências para gerir equipas, motivar pessoas e liderar com ética e resultados.
+      </p>
+
+      <div class="mt-auto d-flex flex-wrap gap-2 course-actions">
+        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalLideranca">
+          Saber mais
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+     <div class="col-lg-4 col-md-6">
+  <div class="card course-card">
+    <img src="assets/img/blog/bolg-5.jpg" class="card-img-top" alt="Secretariado executivo">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">Secretariado Executivo</h5>
+
+      <p class="card-text mb-3">
+        Formação completa para assessorar gestores e organizar processos administrativos com excelência.
+      </p>
+
+      <div class="mt-auto d-flex flex-wrap gap-2 course-actions">
+        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSecretariado">
+          Saber mais
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                    <!-- Ética e Deontologia Profissional -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/etica.jpg" class="card-img-top" alt="Ética e Deontologia Profissional">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Ética e Deontologia Profissional</h5>
+                <p class="card-text">Princípios éticos, responsabilidade profissional e conduta no ambiente de trabalho.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalEtica">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnicas de Recrutamento e Seleção -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/recrutamento.jpg" class="card-img-top" alt="Recrutamento e Seleção de Pessoas">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Técnicas de Recrutamento e Seleção</h5>
+                <p class="card-text">Ferramentas, entrevistas e processos modernos de seleção de candidatos.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalRecrutamento">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Motivação Organizacional -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/motivacao.jpg" class="card-img-top" alt="Motivação Organizacional">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Motivação Organizacional</h5>
+                <p class="card-text">Técnicas para aumentar a motivação, desempenho e engajamento da equipa.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalMotivacao">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formação Pedagógica de Formadores -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/formadores.jpg" class="card-img-top" alt="Formação Pedagógica">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Formação Inicial Pedagógica de Formadores</h5>
+                <p class="card-text">Conceitos pedagógicos, didática e técnicas de ensino para formadores.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalPedagogica">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnicas de Recepção e Atendimento -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/recepcao.jpg" class="card-img-top" alt="Recepção e Atendimento ao Público">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Técnicas de Recepção e Atendimento ao Público</h5>
+                <p class="card-text">Atendimento profissional, comunicação e gestão de clientes.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalRecepcao">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnicas de Venda e Negociação -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/endas.jpg" class="card-img-top" alt="Vendas e Negociação">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Técnicas de Venda e Negociação</h5>
+                <p class="card-text">Estratégias, persuasão e negociação eficaz com clientes.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalVendas">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Redação de Documentos Oficiais -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/redacao.jpg" class="card-img-top" alt="Redação Oficial">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Redação de Documentos Oficiais</h5>
+                <p class="card-text">Escrita profissional para atas, relatórios, pareceres e documentos formais.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalRedacao">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Higiene e Segurança no Trabalho -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/hst.jpg" class="card-img-top" alt="Higiene e Segurança no Trabalho">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Higiene e Segurança no Trabalho</h5>
+                <p class="card-text">Normas, prevenção de riscos, primeiros socorros e segurança laborar.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalHST">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contabilidade -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/contabilidade.jpg" class="card-img-top" alt="Contabilidade">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Contabilidade</h5>
+                <p class="card-text">Lançamentos, balanços, património, relatórios e princípios fundamentais.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalContabilidade">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Marketing -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/marketing.jpg" class="card-img-top" alt="Marketing">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Marketing</h5>
+                <p class="card-text">Estratégias de mercado, branding, divulgação e comportamento do consumidor.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalMarketing">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empreendedorismo -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/empreendedorismo.jpg" class="card-img-top" alt="Empreendedorismo">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Empreendedorismo</h5>
+                <p class="card-text">Criação de negócios, visão estratégica, gestão e inovação.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalEmpreendedorismo">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pacote Office -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/office.jpg" class="card-img-top" alt="Pacote Office">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Pacote Office</h5>
+                <p class="card-text">Word, Excel, PowerPoint, Access e ferramentas essenciais de escritório.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalOffice">Saber mais</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Línguas -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card course-card">
+              <img src="assets/img/blog/linguas.jpg" class="card-img-top" alt="Línguas">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Línguas — Inglês e Francês</h5>
+                <p class="card-text">Aprendizagem completa de línguas para comunicação profissional e académica.</p>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalLinguas">Saber mais</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Texto complementar -->
+          <div class="col-12 mt-4">
+            <div class="text-center">
+              <h3 class="mb-3">R.J.M.A &mdash; Centro de Estudos e Capacitação Profissional</h3>
+              <p>Temos muitos outros cursos nas áreas empresariais e do mundo dos negócios. Entre em contacto connosco para
+                conhecer a agenda completa de formações.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+<!-- ================== MODAIS COMPLETOS ================== -->
+
+<!-- Gestão Integrada de RH -->
+<div class="modal fade" id="modalGRH">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Gestão Integrada de RH e Legislação Laboral</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          O curso de <strong>Gestão Integrada de RH e Legislação Laboral</strong> prepara profissionais para atuar estrategicamente na gestão de pessoas, garantindo eficiência e conformidade jurídica.
+        </p>
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Rotinas trabalhistas e relações de trabalho</li>
+          <li>Contratos, direitos e deveres legais</li>
+          <li>Políticas de remuneração e benefícios</li>
+          <li>Saúde e segurança ocupacional</li>
+          <li>Ética e responsabilidade profissional</li>
+        </ul>
+        <p><strong>Duração:</strong> 4 semanas (1 mês)</p>
+      </div>
+      <div class="modal-footer">
+        <a href="Plano Curricular do Curso de GRH.pdf" target="_blank" class="btn btn-primary">Baixar Plano Curricular</a>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Gestão de Conflitos -->
+<div class="modal fade" id="modalConflitos">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Gestão e Resolução de Conflitos</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Desenvolva técnicas modernas de mediação, prevenção e solução de conflitos organizacionais.</p>
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Negociação e mediação</li>
+          <li>Escuta ativa e comunicação assertiva</li>
+          <li>Gestão emocional</li>
+          <li>Construção de acordos</li>
+          <li>Prevenção de conflitos internos</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chefia e Liderança -->
+<div class="modal fade" id="modalLideranca">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Chefia e Liderança</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Formação completa para desenvolver habilidades de liderança, gestão e motivação de equipas.</p>
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Estilos de liderança</li>
+          <li>Motivação e desempenho</li>
+          <li>Tomada de decisão</li>
+          <li>Comunicação eficaz</li>
+          <li>Gestão de equipas</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Secretariado Executivo -->
+<div class="modal fade" id="modalSecretariado">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Secretariado Executivo</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Formação voltada para profissionais que atuam na assessoria administrativa e gestão de informação corporativa.
+        </p>
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Atendimento profissional e comunicação</li>
+          <li>Gestão de agendas e documentos</li>
+          <li>Organização de eventos</li>
+          <li>Ferramentas tecnológicas</li>
+          <li>Ética e postura profissional</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ética -->
+<div class="modal fade" id="modalEtica">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Ética e Deontologia Profissional</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Princípios éticos</li>
+          <li>Responsabilidade profissional</li>
+          <li>Conduta e postura</li>
+          <li>Código de ética</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recrutamento -->
+<div class="modal fade" id="modalRecrutamento">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Técnicas de Recrutamento e Seleção</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Análise de currículos</li>
+          <li>Entrevistas profissionais</li>
+          <li>Testes e dinâmicas</li>
+          <li>Processos modernos de seleção</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Motivação -->
+<div class="modal fade" id="modalMotivacao">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Motivação Organizacional</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Fatores motivacionais</li>
+          <li>Produtividade e desempenho</li>
+          <li>Desenvolvimento humano</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pedagógica -->
+<div class="modal fade" id="modalPedagogica">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Formação Inicial Pedagógica de Formadores</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Didática e metodologia</li>
+          <li>Planeamento de aulas</li>
+          <li>Técnicas de ensino</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recepção -->
+<div class="modal fade" id="modalRecepcao">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Técnicas de Recepção e Atendimento</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Atendimento ao público</li>
+          <li>Gestão de clientes</li>
+          <li>Comunicação eficaz</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vendas -->
+<div class="modal fade" id="modalVendas">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Técnicas de Venda e Negociação</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Negociação</li>
+          <li>Persuasão</li>
+          <li>Fecho de vendas</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Redação -->
+<div class="modal fade" id="modalRedacao">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Redação de Documentos Oficiais</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Documentos formais</li>
+          <li>Atas, relatórios, pareceres</li>
+          <li>Linguagem técnica e estrutura</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Higiene e Segurança -->
+<div class="modal fade" id="modalHST">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Higiene e Segurança no Trabalho</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Prevenção de acidentes</li>
+          <li>Primeiros socorros</li>
+          <li>Segurança laboral</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contabilidade -->
+<div class="modal fade" id="modalContabilidade">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Contabilidade</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Balanços e património</li>
+          <li>Relatórios financeiros</li>
+          <li>Movimentos contabilísticos</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Marketing -->
+<div class="modal fade" id="modalMarketing">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Marketing</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Fundamentos de marketing</li>
+          <li>Branding</li>
+          <li>Estratégias comerciais</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Empreendedorismo -->
+<div class="modal fade" id="modalEmpreendedorismo">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Empreendedorismo</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Inovação e gestão de negócios</li>
+          <li>Estratégia e visão empresarial</li>
+          <li>Criação de empresas</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pacote Office -->
+<div class="modal fade" id="modalOffice">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Pacote Office</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Word</li>
+          <li>Excel</li>
+          <li>PowerPoint</li>
+          <li>Access</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Línguas -->
+<div class="modal fade" id="modalLinguas">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Línguas — Inglês e Francês</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Conteúdos:</strong></p>
+        <ul>
+          <li>Conversação</li>
+          <li>Gramática e escrita</li>
+          <li>Vocabulário profissional</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <!-- ======= Footer (igual ao da index) ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>R.J.M.A- Prestação de serviços</h3>
+            <p>É uma empresa de direito e capital angolano, sediada em Luanda, que presta serviços de consultoria técnico-administrativa, gestão de recursos humanos e formação multidisciplinar.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Acesso Rápido</h4>
+            <ul>
+              <li><a class="nav-link" href="index.html#hero">Início</a></li>
+              <li><a class="nav-link" href="index.html#about">Sobre nós</a></li>
+              <li><a class="nav-link" href="blog.html">Notícias</a></li>
+              <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contactos</h4>
+            <p>
+              Rua Sebastião Desta Vez, casa nº129, Valódia<br>
+              <strong>Telefone:</strong> +244 932 321 082 | +244 975 626 432<br>
+              <strong>Email:</strong> rjmacompany@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://www.facebook.com/share/16vVkY1Jer/" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/centro_de_formacao_rjma?igsh=b2cwMHRpNTloNHZ6" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://wa.me/244932321082" class="whatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+&copy; Copyright <strong>2025 R.J.M.A "Centro de estudos e Capacitação Profissional"</strong>. Todos os direitos reservados.      
+      </div>
+     
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Adicionar classe 'scrolled' quando rolar a página
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Toggle menu mobile
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navbarUl = document.querySelector('#navbar-menu');
+
+      if (mobileNavToggle && navbarUl) {
+        mobileNavToggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          navbarUl.classList.toggle('mobile-nav-active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('#navbar a').forEach(link => {
+          link.addEventListener('click', function () {
+            if (navbarUl.classList.contains('mobile-nav-active')) {
+              navbarUl.classList.remove('mobile-nav-active');
+              mobileNavToggle.classList.remove('bi-x');
+              mobileNavToggle.classList.add('bi-list');
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

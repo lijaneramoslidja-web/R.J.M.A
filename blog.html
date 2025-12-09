@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>R.J.M.A - Blog de Notícias</title>
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Navbar igual à homepage */
+    #header {
+      background: #ffffff !important;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+
+    #header.scrolled {
+      padding: 10px 0;
+    }
+
+    #header a img {
+      height: 75px;
+      transition: .3s;
+    }
+
+    #header.scrolled a img {
+      height: 55px;
+    }
+
+    #navbar a {
+      color: #8B5CF6;
+      font-weight: 500;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    #navbar a:hover,
+    #navbar .active {
+      color: #000;
+    }
+
+    /* Header da página */
+    #page-header {
+      padding-top: 130px;
+      padding-bottom: 60px;
+      background: #f7f7f7;
+      text-align: center;
+    }
+
+    #page-header h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    #page-header h2 {
+      font-size: 18px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .btn-back {
+      padding: 12px 30px;
+      border-radius: 50px;
+      background: #00a560;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
+    }
+
+    .btn-back:hover {
+      background: #008f4d;
+    }
+
+
+
+/* ======= CARDS DO BLOG ======= */
+.news-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0,0,0,.12);
+  transition: all .35s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(129, 97, 216, .30);
+}
+
+.news-card img {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.news-card h5 {
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.news-meta {
+  font-size: 14px;
+  color: #666;
+}
+
+.btn-blog {
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #8161D8;
+  color: #8161D8;
+  padding: 6px 18px;
+  transition: .3s;
+}
+
+.btn-blog:hover {
+  background: #8161D8;
+  color: #fff;
+}
+
+/* ======= MODAIS PREMIUM ======= */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 5px 40px rgba(0,0,0,.3);
+}
+
+.modal-header {
+  background: #f3edff;
+  border-bottom: 2px solid #8161D8;
+  padding: 22px;
+}
+
+.modal-header h5 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #5A44A3;
+}
+
+.modal-body {
+  padding: 25px 28px;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.modal-footer {
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  padding: 16px 24px;
+}
+
+.btn-close {
+  filter: brightness(.4);
+}
+
+.btn-close:hover {
+  filter: brightness(.2);
+}
+
+/* Botões dentro dos modais */
+.btn-modal-primary {
+  background: #8161D8;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 22px;
+  border: none;
+}
+
+.btn-modal-primary:hover {
+  background: #6d4bc2;
+}
+
+.btn-modal-secondary {
+  background: #ddd;
+  color: #333;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-modal-secondary:hover {
+  background: #ccc;
+}
+
+
+
+  </style>
+
+<style>
+  #header {
+    background: #ffffff !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+  }
+
+  #header.scrolled {
+    padding: 10px 0;
+  }
+
+  #header .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  #header a img {
+    height: 80px;
+    transition: all 0.3s ease;
+  }
+
+  #header.scrolled a img {
+    height: 60px;
+  }
+
+  #navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  #navbar li {
+    position: relative;
+    margin-left: 30px;
+  }
+
+  #navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #8B5CF6;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  #navbar a i {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+
+  #navbar a:hover,
+  #navbar .active,
+  #navbar li:hover > a {
+    color: #000000;
+  }
+
+  .mobile-nav-toggle {
+    color: #8B5CF6;
+    font-size: 32px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.3s;
+    position: relative;
+    z-index: 9999;
+  }
+
+  @media (max-width: 991px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+
+    #navbar ul {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 30px 20px;
+      z-index: 999;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #navbar ul.mobile-nav-active {
+      display: flex !important;
+    }
+
+    #navbar li {
+      margin: 0;
+      width: 100%;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    #navbar li:last-child {
+      border-bottom: none;
+    }
+
+    #navbar a {
+      width: 100%;
+      justify-content: flex-start;
+      padding: 15px 10px;
+      font-size: 16px;
+    }
+
+    #header a img {
+      height: 60px;
+    }
+
+    #header.scrolled a img {
+      height: 50px;
+    }
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+ <!-- ======= Header (IGUAL AO INDEX) ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-xl-20 d-flex align-items-center justify-content-between">
+
+        <a href="index.html">
+          <img href="index.html" src="assets/img/logo.png" alt="logo_rjma" height="90px">
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <i class="bi bi-list mobile-nav-toggle"></i>
+          <ul id="navbar-menu">
+            <li><a class="nav-link scrollto" href="index.html#hero"><i class="bi bi-house-door"></i>Início</a></li>
+            <li><a class="nav-link scrollto" href="index.html#about"><i class="bi bi-info-circle"></i>Sobre nós</a></li>
+            <li><a class="nav-link active" href="blog.html"><i class="bi bi-newspaper"></i>Notícias</a></li>
+            <li><a class="nav-link" href="formações.html"><i class="bi bi-book"></i>Formações</a></li>
+            <li><a class="nav-link" href="contacto.html"><i class="bi bi-telephone"></i>Contacto</a></li>
+            <li><a class="nav-link" href="Nossos Serviços.html"><i class="bi bi-gear"></i>Nossos serviços</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======= Cabeçalho do Blog ======= -->
+<section id="page-header" style="padding-top:150px; padding-bottom:50px; background:#f8f8f8;">
+  <div class="container text-center">
+
+    
+
+    <h1 style="font-size:38px; font-weight:700; color:#333; margin-bottom:10px;">
+      BLOG DE NOTÍCIAS EMPRESARIAIS
+    </h1>
+
+    <p style="font-size:17px; color:#666;">
+      Fique a par de todas as novidades, dicas e informações do mundo dos negócios
+    </p>
+
+  </div>
+</section>
+
+
+  <!-- CARDS DO BLOG -->
+  <section class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4">
+
+        <!-- NOTÍCIA 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card news-card">
+            <img src="assets/img/blog/blog-1.jpg" alt="">
+            <div class="p-3">
+              <h5 class="fw-bold">A Importância da Contabilidade para o Sucesso Empresarial</h5>
+              <p class="news-meta mb-2">
+              
+          
+              </p>
+              <p class="text-muted">
+                A contabilidade é a base da gestão financeira e estratégica de qualquer empresa...
+              </p>
+<button class="btn btn-blog" data-bs-toggle="modal" data-bs-target="#modal1">Ler mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTÍCIA 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card news-card">
+            <img src="assets/img/blog/blog-2.jpg" alt="">
+            <div class="p-3">
+              <h5 class="fw-bold">Como a Gestão Financeira Contribui para a Saúde da Empresa</h5>
+              <p class="news-meta mb-2">
+                
+              </p>
+              <p class="text-muted">
+                Uma boa gestão financeira permite maior controle, planejamento e crescimento sustentável...
+              </p>
+<button class="btn btn-blog" data-bs-toggle="modal" data-bs-target="#modal1">Ler mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTÍCIA 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card news-card">
+            <img src="assets/img/blog/blog-3.jpg" alt="">
+            <div class="p-3">
+              <h5 class="fw-bold">Atualizações na Legislação Fiscal para 2025</h5>
+              <p class="news-meta mb-2">
+            
+              </p>
+              <p class="text-muted">
+                Novas regras fiscais exigem que empresários e contadores estejam atentos às mudanças...
+              </p>
+<button class="btn btn-blog" data-bs-toggle="modal" data-bs-target="#modal1">Ler mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTÍCIA 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card news-card">
+            <img src="assets/img/blog/blog-4.jpg" alt="">
+            <div class="p-3">
+              <h5 class="fw-bold">O Capital Financeiro de uma Empresa</h5>
+              <p class="news-meta mb-2">
+            
+              </p>
+              <p class="text-muted">
+                O capital financeiro é fundamental para operações, investimentos e estratégia empresarial...
+              </p>
+<button class="btn btn-blog" data-bs-toggle="modal" data-bs-target="#modal1">Ler mais</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- ================= MODAL 1 ================= -->
+<div class="modal fade" id="modal1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">A Importância da Contabilidade para o Sucesso Empresarial</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          A contabilidade é a base que sustenta a gestão financeira empresarial. 
+          Sem ela, decisões estratégicas, análise de lucros, custos e impostos tornam-se imprecisas.
+        </p>
+        <p>
+          Uma empresa que domina os relatórios financeiros tem maior capacidade de planeamento, 
+          crescimento e tomada de decisões eficientes.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-modal-primary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL 2 ================= -->
+<div class="modal fade" id="modal2">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Como a Gestão Financeira Contribui para a Saúde da Empresa</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          A gestão financeira é um dos pilares para garantir que a empresa consiga crescer de forma sustentável.
+          Envolve análise de custos, investimentos, fluxo de caixa e gestão de receitas.
+        </p>
+        <p>
+          Empresas com boa saúde financeira têm maior capacidade de enfrentar desafios e aproveitar oportunidades.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-modal-primary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL 3 ================= -->
+<div class="modal fade" id="modal3">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Atualizações na Legislação Fiscal em 2025</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          Para 2025, novas regras fiscais entram em vigor, incluindo alterações em taxas, deduções e prazos de pagamento.
+        </p>
+        <p>
+          Estar informado garante conformidade legal e evita multas que podem prejudicar a empresa.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-modal-primary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL 4 ================= -->
+<div class="modal fade" id="modal4">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">O Capital Financeiro de uma Empresa</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          O capital financeiro é essencial para as operações do dia a dia, investimentos e tomada de decisões estratégicas.
+        </p>
+        <p>
+          Seu controlo eficiente impede falência, reduz riscos e promove estabilidade empresarial.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-modal-primary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>R.J.M.A - Prestação de serviços</h3>
+            <p>É uma empresa de direito e capital angolano, sediada em Luanda, que presta serviços de consultoria técnico-administrativa, gestão de recursos humanos e formação multidisciplinar.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Acesso Rápido</h4>
+            <ul>
+              <li><a href="index.html#hero">Início</a></li>
+              <li><a href="index.html#about">Sobre nós</a></li>
+              <li><a href="blog.html">Notícias</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contactos</h4>
+            <p>
+              Rua Sebastião Desta Vez, Casa nº129, Valódia<br>
+              <strong>Telefone:</strong> +244 932 321 082 | +244 975 626 432<br>
+              <strong>Email:</strong> rjmacompany@gmail.com<br>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="container">
+      <div class="copyright">
+&copy; Copyright <strong>2025 R.J.M.A "Centro de estudos e Capacitação Profissional"</strong>. Todos os direitos reservados.      
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navbarUl = document.querySelector('#navbar-menu');
+
+    if (mobileNavToggle && navbarUl) {
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        navbarUl.classList.toggle('mobile-nav-active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      });
+
+      document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (navbarUl.classList.contains('mobile-nav-active')) {
+            navbarUl.classList.remove('mobile-nav-active');
+            mobileNavToggle.classList.remove('bi-x');
+            mobileNavToggle.classList.add('bi-list');
+          }
+        });
+      });
+    }
+  });
+</script>
+
+
+</body>
+
+</html>
